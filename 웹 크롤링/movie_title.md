@@ -1,6 +1,6 @@
 # **웹 스크래핑하기**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3fa62e84-c805-4aea-9cad-6f7df45359d6/_2021-04-14__7.15.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3fa62e84-c805-4aea-9cad-6f7df45359d6/_2021-04-14__7.15.41.png)
+<img width="1030" alt="스크린샷 2021-04-14 오후 7 15 41" src="https://user-images.githubusercontent.com/77820288/114800890-8cc13800-9dd5-11eb-9bc7-9583a9ec3322.png">
 
 네이버 영화 사이트에 접속하여 영화의 제목들을 뽑아오는 것을 목표로 스크래핑을 하였다.
 
@@ -16,7 +16,7 @@ response = requests.get('https://movie.naver.com/movie/running/current.nhn#')
 soup = BeauifulSoup(response.text, 'html.parser)
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d0cb794-73c8-4bcd-befa-fd22b176d318/_2021-04-14__7.26.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d0cb794-73c8-4bcd-befa-fd22b176d318/_2021-04-14__7.26.50.png)
+<img width="891" alt="스크린샷 2021-04-14 오후 7 26 50" src="https://user-images.githubusercontent.com/77820288/114800921-a19dcb80-9dd5-11eb-8ae6-68c761665154.png">
 
 내가 스크랩하고 싶은 타겟이 HTML 구조 안에 어디에 위치해 있는지 확인한다.
 
