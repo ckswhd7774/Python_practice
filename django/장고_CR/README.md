@@ -27,6 +27,9 @@ foreign key로 다른 테이블을 가리킨다.
 7. setting.py에 app 추가하기
 ```
 
+
+
+
 ### 먼저 model.py를 작성한다.
 
 ```python
@@ -53,6 +56,10 @@ class Category(models.Model) :
 위의 ForeignKey를 통해서 article과 Home이 연결되었다.
 
 ForeignKey('어떤 클래스를 가리킬 것인가', Home 클리스에서 데이터가 삭제되면 나도 삭제하겠다, Home에서 Category 테이블을 뭐라고 부를것인가 (1:N 관계에서 나를 뭐라고 부를것인가))
+
+
+
+
 
 ## makemigrations
 
@@ -182,8 +189,11 @@ def result(request, result_pk) :
 
     return render(request, 'result.html',{'result':target_result})
 ```
-
+  
 result.html 로 넘길 때 클릭한 카테고리 정보를 모델로부터 가져와서 넘긴다.
+
+
+
 
 result에서 각 카테고리의 게시물을 나열하는 기능 - result.html
 
@@ -209,6 +219,9 @@ result.html
 </body>
 </html>
 ```
+
+
+
 
 <img width="396" alt="스크린샷 2021-04-26 오후 6 01 32" src="https://user-images.githubusercontent.com/77820288/116058429-cdb12a80-a6ba-11eb-88cc-a8fcd2d20cfc.png">
 
