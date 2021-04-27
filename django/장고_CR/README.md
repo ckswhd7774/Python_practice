@@ -178,8 +178,8 @@ urls.py
 
 path('result/<int:result_pk>', views.result, name='result')
 ```
-
-### 루트에서 카테고리를 클릭해서 result로 넘어가느 기능 - views.py
+  
+### 루트에서 카테고리를 클릭해서 result로 넘어가는 기능 - views.py
 
 ```python
 views.py
@@ -190,11 +190,8 @@ def result(request, result_pk) :
     return render(request, 'result.html',{'result':target_result})
 ```
   
-result.html 로 넘길 때 클릭한 카테고리 정보를 모델로부터 가져와서 넘긴다.
-
-
-
-
+result.html 로 넘길 때 클릭한 카테고리 정보를 모델로부터 가져와서 넘긴다.  
+  
 result에서 각 카테고리의 게시물을 나열하는 기능 - result.html
 
 ```python
