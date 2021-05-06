@@ -33,7 +33,8 @@
 <br><br>
 ### 템플릿 상속
 
-<img width="318" alt="스크린샷 2021-05-06 오전 11 53 28" src="https://user-images.githubusercontent.com/77820288/117239761-59207d80-ae6a-11eb-891a-b036411d5070.png">
+<img width="304" alt="스크린샷 2021-05-04 오후 8 32 12" src="https://user-images.githubusercontent.com/77820288/117240303-7a359e00-ae6b-11eb-8cd1-8c211716f8be.png">
+
 
 
 base에서 기본적인 html의 틀을 작성하고, index 와 detail 에서 base 를 상속해서 사용한다.
