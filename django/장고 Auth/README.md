@@ -274,3 +274,15 @@ def login(request) :
 <img width="315" alt="스크린샷 2021-05-10 오후 8 13 28" src="https://user-images.githubusercontent.com/77820288/117651955-8acc7800-b1cd-11eb-88dc-c703677a6dda.png">
 
 <img width="315" alt="스크린샷 2021-05-10 오후 8 11 11" src="https://user-images.githubusercontent.com/77820288/117651981-91f38600-b1cd-11eb-81a2-8bd205165155.png">
+
+### 로그아웃 - views.py
+
+```python
+def logout(request) :
+    if request.method == 'POST' :
+        auth.logout(request)
+        
+    return redirect('index')
+```
+
+로그아웃은 auth.logout 함수를 이용하면 간단하게 구현된다.
