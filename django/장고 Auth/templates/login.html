@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Todolist</h1>
+<h1>로그인 페이지입니다.</h1>
+{% if error.state %}
+<h2>{{error.msg}}</h2>
+{% endif %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="아이디" name="userid">
+    <input type="password" placeholder="비밀번호" name="password">
+    <button type="submit">로그인</button>
+</form>
+{% endblock content %}

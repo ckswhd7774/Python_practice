@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Todolist</h1>
+<form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="오늘 할일" name='todo'>
+    <button type="submit">추가하기</button>
+</form>
+{% for edit in edits %}
+    {% if edit.pk == pk %}
+<form action="{% url 'edit' edit.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="text" value="{{edit}}" name='edit'>
+   <button type="submit">수정하기</button>
+</form>
+    {% else %}
+    <p>{{edit.todo}}</p>
+    <a href="{% url 'edit' edit.pk %}">수정하기</a>
+<a href="#">완료</a>
+{% endif %}
+{% endfor %}
+{% endblock content %}
