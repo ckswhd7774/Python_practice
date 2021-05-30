@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>edit</h1>
+    <form action="{% url 'student:edit' user.student.pk %}" method="POST" >
+        {% csrf_token %}
+        <input type='text' placeholder="이름" value={{user.student.name}} name="name"  />
+        <br/><br/>
+        <textarea name="introduce_text" >{{user.student.introduce_text}}</textarea>
+        <br/><br/>
+        <button type="submit">수정하기</button>
+    </form>
+{% endblock content %}

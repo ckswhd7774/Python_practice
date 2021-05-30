@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for class in class_room_list %}
+    <a href="{% url 'social:class' class.pk %}">
+        {{class.class_num}} 반 : {{class.teacher}} <br/><br/>
+    </a>
+{% endfor %}
+
+{% endblock content %}
