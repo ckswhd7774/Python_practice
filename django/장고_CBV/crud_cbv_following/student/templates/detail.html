@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>방명록 주인 : {{user.student.name}}</h2>
+    <form action="{% url 'social:relationship' user.pk %}" method="POST">
+        {% csrf_token %}
+        {%if request.user in user.relationship.followers.all%}
+        <button type="submit">팔로우취소</button>
+        {% else %}
+        <button type="submit">팔로우하기</button>
+        {% endif %}
+    </form>
+    <h3>{{user.student.name}} 의 댓글</h3>
+
+    {% if request.user == user %}
+    <a href="{% url 'student:edit' user.pk %}">수정하기</a>
+    {% endif %}
+    <h3>댓글달기</h3>
+    {% for comment in user.writer.all %}
+    <p>글 : {{comment.content}} 작성자 : {{comment.writer}} </p>
+    <form action="{% url 'social:like' comment.pk %}" method="POST">
+        {% csrf_token%}
+        {% if request.user in comment.like.users.all%}
+        <button type="submit">좋아요 취소</button>
+        {% else %}
+        <button type="submit">좋아요</button>
+        {% endif %}
+    </form>
+    {% endfor %}
+    <form action="{% url 'social:comment' user.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="댓글" name="content">
+        <button type="submit">댓글달기</button>
+    </form>
+{% endblock content %}

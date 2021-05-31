@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>detail</h1>
+<h2>{{class_room.class_num}}</h2>
+<h3>{{class_room.teacher}}</h3>
+
+<h3>학생들</h3>
+<ul>
+    {% for user in user_list %}
+        <a href="{% url 'student:detail' user.pk %}">
+        <li>{{user.student.name}}</li>
+        </a>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
