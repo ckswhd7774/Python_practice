@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    project/accounts/templates/account/activation_email.html 파일 생성
+
+{{user.username}}님, 아래 링크를 클릭하여 계정을 활성화하세요:
+http://{{domain}}{% url 'activate' uid token %}
+</body>
+</html>
